@@ -207,9 +207,11 @@ func (g *Game) Update() error {
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	e := <-endtimer
-	hours := e / (60*60)
-	minutes := e / 60
-	seconds := e % 60
+	HOURS := 60*60
+	MINUTES := 60
+	hours := e / (HOURS)
+	minutes := e % (HOURS) / MINUTES
+	seconds := e % MINUTES
 	if g.audioPlayer.IsPlaying() {
 		ebitenutil.DebugPrint(screen, "Bump!")
 	} else {

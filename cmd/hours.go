@@ -38,6 +38,7 @@ to quickly create a Cobra application.`,
 		if err != nil {
 			fmt.Println("Could not read value for timer.")
 		}
+		fmt.Println("153762", int(numberFlt * 60 * 60))
 		go startCountDown(int(numberFlt * 60 * 60))
 		go waitForExit()
 		openGame()
